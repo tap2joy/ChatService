@@ -5,7 +5,7 @@ import (
 )
 
 type Channel struct {
-	Id   uint32 `json:"id" xorm:"pk autoincr INT default nextval('channel_id_seq'::regclass)"`
+	Id   uint32 `json:"id" xorm:"pk autoincr INT"`
 	Desc string `json:"desc" xorm:"VARCHAR(128)"`
 
 	CreateAt  time.Time `json:"create_at" xorm:"created"`

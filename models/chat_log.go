@@ -5,7 +5,7 @@ import (
 )
 
 type ChatLog struct {
-	Id         int64  `json:"id" xorm:"pk autoincr BIGINT default nextval('chat_log_id_seq'::regclass)"`
+	Id         int64  `json:"id" xorm:"pk autoincr BIGINT"`
 	ChannelId  uint32 `json:"channel_id" xorm:"not null index INT"`
 	SenderName string `json:"sender_name" xorm:"VARCHAR(256)"`
 	Content    string `json:"content" xorm:"TEXT"`
