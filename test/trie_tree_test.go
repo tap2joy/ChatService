@@ -7,14 +7,8 @@ import (
 	"github.com/tap2joy/ChatService/utils"
 )
 
-func TestBuildTrieTree(t *testing.T) {
-	tree := utils.NewTree()
-	tree.BuildTree("Hello every one, I'm go")
-	tree.AddWord("simple")
-	fmt.Printf("%v", tree)
-}
-
-func TestReplace(t *testing.T) {
+func TestTrieTree(t *testing.T) {
+	fmt.Println(">>>>> TrieTree test begin")
 	tree := utils.NewTree()
 	tree.BuildTree("fuck god")
 

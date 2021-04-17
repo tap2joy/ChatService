@@ -7,11 +7,13 @@ import (
 )
 
 func TestRegexp(t *testing.T) {
+	fmt.Println(">>>>> Regexp test begin")
+
 	src := "/status ssss"
 	match, _ := regexp.MatchString("^/status*", src)
 	if match {
-		fmt.Println("match")
+		fmt.Println("regexp match")
 	} else {
-		fmt.Println("not match")
+		fmt.Println("regexp not match")
 	}
 }

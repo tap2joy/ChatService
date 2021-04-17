@@ -8,6 +8,7 @@ import (
 )
 
 func TestOnlineTimeFormat(t *testing.T) {
+	fmt.Println(">>>>> TimeFormat test begin")
 	duration1 := uint32(60)
 	time1 := utils.FormatOnlineTime(duration1)
 	fmt.Printf("duration %d: %s\n", duration1, time1)

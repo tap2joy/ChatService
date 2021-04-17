@@ -8,6 +8,8 @@ import (
 )
 
 func TestConfig(t *testing.T) {
+	fmt.Println(">>>>> Config test begin")
+
 	appConfig, err := utils.GetConfig("app.json")
 	if err != nil {
 		fmt.Printf("load app json failed, err = %v\n", err)
@@ -21,5 +23,4 @@ func TestConfig(t *testing.T) {
 
 	appName := appConfig.GetString("appname")
 	fmt.Printf("appName = %v\n", appName)
-
 }

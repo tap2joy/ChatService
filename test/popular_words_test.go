@@ -8,7 +8,8 @@ import (
 )
 
 func TestPopularWords(t *testing.T) {
-	fmt.Println("TestPopularWords begin")
+	fmt.Println(">>>>> PopularWords test begin")
+
 	pop := utils.NewPopularWords()
 	pop.AddLog("pytest-django tries to automatically add your project to the Python path by looking for a manage.py file and adding its path to the Python path.")
 	topWord := pop.GetPopularWord()
