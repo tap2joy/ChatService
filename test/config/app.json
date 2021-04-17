@@ -1,0 +1,7 @@
+{
+    "pg_dsn": "host=127.0.0.1 user=postgres dbname=chat_db password=111111 sslmode=disable",
+    "pg_maxconns": 10,
+    "pg_ideleconns": 10,
+    "pg_max_lifetime": 180,
+    "appname": "ChatService"
+}
