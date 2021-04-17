@@ -44,7 +44,7 @@ func GetChannel(channelId uint32) (*models.Channel, error) {
 
 func GetChannelList(offset int, limit int) ([]*models.Channel, error) {
 	channels := make([]*models.Channel, 0)
-	err := models.Engine.Limit(limit, offset).OrderBy("create_at DESC").Find(&channels)
+	err := models.Engine.Limit(limit, offset).OrderBy("id ASC").Find(&channels)
 	if err != nil {
 		return channels, err
 	}
