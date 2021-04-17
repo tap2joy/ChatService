@@ -12,7 +12,6 @@ type StringFilter struct {
 }
 
 func NewStringFilter() *StringFilter {
-	fmt.Println("new string filter")
 	filter := &StringFilter{
 		TrieTree: NewTree(),
 	}
@@ -20,12 +19,12 @@ func NewStringFilter() *StringFilter {
 	if err != nil {
 		fmt.Printf("load filter.txt failed, err = %v\n", err)
 	}
+	fmt.Println("create string filter success")
 	return filter
 }
 
 func (filter *StringFilter) LoadFile() error {
 	dir, _ := os.Getwd()
-	fmt.Printf("dir: %s\n", dir)
 
 	fptr := flag.String("filterpath", dir+"/config/filter.txt", "the file path to read from")
 	flag.Parse()
@@ -51,7 +50,7 @@ func (filter *StringFilter) LoadFile() error {
 		return err
 	}
 
-	fmt.Println("load filter.txt success")
+	fmt.Printf("load %s/config/filter.txt success\n", dir)
 
 	return nil
 }
