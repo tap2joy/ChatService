@@ -18,8 +18,9 @@ func (*Server) SendMessage(ctx context.Context, req *pb.SendMessageRequest) (*pb
 	senderName := req.SenderName
 	channel := req.Channel
 	content := req.Content
+	isSystem := req.System
 
-	retStr, err := services.GetChatMgr().SendMessage(channel, senderName, content)
+	retStr, err := services.GetChatMgr().SendMessage(channel, senderName, content, isSystem)
 	if err != nil {
 		return nil, err
 	}

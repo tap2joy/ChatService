@@ -66,7 +66,7 @@ func (mgr *ChatMgr) InitChannels() {
 	}
 }
 
-func (mgr *ChatMgr) SendMessage(channelId uint32, senderName string, content string) (string, error) {
+func (mgr *ChatMgr) SendMessage(channelId uint32, senderName string, content string, isSystem bool) (string, error) {
 	result := ""
 	channel, err := dao.GetChannel(channelId)
 	if err != nil {
@@ -120,9 +120,11 @@ func (mgr *ChatMgr) SendMessage(channelId uint32, senderName string, content str
 			return result, err
 		}
 
-		err = dao.AddChatLog(channelId, senderName, filteredContent)
-		if err != nil {
-			return result, err
+		if !isSystem {
+			err = dao.AddChatLog(channelId, senderName, filteredContent)
+			if err != nil {
+				return result, err
+			}
 		}
 	}
 
