@@ -25,7 +25,8 @@ func main() {
 
 	host := utils.GetString("app", "host")
 	port := utils.GetInt("app", "port")
-	lis, err := net.Listen("tcp", ":9101")
+	srvAddress := fmt.Sprintf("%s:%d", host, port)
+	lis, err := net.Listen("tcp", srvAddress)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
