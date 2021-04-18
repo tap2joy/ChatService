@@ -2,7 +2,6 @@ package utils
 
 import (
 	"bufio"
-	"flag"
 	"fmt"
 	"os"
 )
@@ -26,10 +25,11 @@ func NewStringFilter() *StringFilter {
 func (filter *StringFilter) LoadFile() error {
 	dir, _ := os.Getwd()
 
-	fptr := flag.String("filterpath", dir+"/config/filter.txt", "the file path to read from")
-	flag.Parse()
+	fullpath := fmt.Sprintf("%s/config/filter.txt", dir)
+	// fptr := flag.String("filterpath", dir+"/config/filter.txt", "the file path to read from")
+	// flag.Parse()
 
-	f, err := os.Open(*fptr)
+	f, err := os.Open(fullpath)
 	if err != nil {
 		return err
 	}

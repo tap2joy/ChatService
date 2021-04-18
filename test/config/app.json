@@ -1,7 +1,14 @@
 {
-    "pg_dsn": "host=127.0.0.1 user=postgres dbname=chat_db password=111111 sslmode=disable",
-    "pg_maxconns": 10,
-    "pg_ideleconns": 10,
-    "pg_max_lifetime": 180,
-    "appname": "ChatService"
+    "service_name" : "chat",
+    "host": "127.0.0.1",
+    "port": "9101",
+    "db_host": "localhost",
+    "db_port": "5432",
+    "db_user": "postgres",
+    "db_password": "111111",
+    "db_name": "chat_db",
+    "db_ssl_mode": "disable",
+    "db_max_connections" : 10,
+    "db_idle_connections": 10,
+    "db_max_life_time": 180
 }
